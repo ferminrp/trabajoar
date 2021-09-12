@@ -28,7 +28,7 @@
 	</div>
 	{:else}
 	<h1>#TrabajoAR</h1>
-	<p>Postea en twitter usando el hashtag #TrabajoAR para aparecer!</p>
+	<p>Postea en twitter usando los hashtags #TrabajoAR o #LaburosAr para aparecer!</p>
 	{#each trabajos as job}
 		<Job {job} />
 	{/each}
