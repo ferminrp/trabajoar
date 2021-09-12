@@ -1,6 +1,5 @@
 <script>
     export let authorData;
-    console.log(authorData);
 
     let username = authorData[0]["username"];
     let imageUrl = authorData[0]["profile_image_url"];

@@ -5,17 +5,13 @@
   let username = job["author"][0]["username"];
   let id = job["id"];
 
-  function link() {
-    sa_event("outbound_link_to_affiliate", function () {
-      window.location.href = 'https://www.twitter.com/'+ username+'/status/' + id;
-    });
-  }
+  let url = "https://www.twitter.com/" + username + "/status/" + id;
 </script>
 
 <article>
   <Author authorData={job.author} />
   <p>{job["text"]}</p>
-  <button on:click={link}>Ver Publicación</button>
+  <a href={url}>Ver Publicación</a>
 </article>
 
 <style>
@@ -28,13 +24,16 @@
     color: white;
   }
 
-  button {
+  a {
     background-color: #4c6bae;
     border: none;
     color: white;
+    text-decoration: none;
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
     box-sizing: border-box;
     margin-top: 2rem;
+    cursor: pointer;
+    display: inline-block;
   }
 </style>

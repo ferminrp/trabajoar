@@ -14,7 +14,7 @@
 				}
 			}
 			loading = false;
-			console.log(trabajos);		
+			/*console.log(trabajos);*/	
 		});
 	}
 	apiFetcher();
