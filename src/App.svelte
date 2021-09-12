@@ -1,6 +1,8 @@
 <script>
-	import Job from './jobs/jobPosting.svelte'
+	import Job from './jobs/jobPosting.svelte';
+	import { BarLoader } from 'svelte-loading-spinners';
 	let trabajos = []
+	let loading = true;
 
 	async function apiFetcher() {
 		return fetch("https://trabajoar.ferminrp.workers.dev/")
@@ -11,6 +13,7 @@
 					trabajos = [...trabajos, data[day][work]];
 				}
 			}
+			loading = false;
 			console.log(trabajos);		
 		});
 	}
@@ -19,20 +22,37 @@
 </script>
 
 <main>
+	{#if loading}
+	<div class="barloader">
+		<BarLoader color="#4C6BAE" />
+	</div>
+	{:else}
 	<h1>#TrabajoAR</h1>
 	<p>Postea en twitter usando el hashtag #TrabajoAR para aparecer!</p>
 	{#each trabajos as job}
 		<Job {job} />
 	{/each}
+
+	{/if}
 </main>
 
 <style>
 	main {
-		max-width: 720px;
+		width: 720px;
 		margin: 0 auto;
+		max-width: 90vw;
 	}
 
 	main > h1, main > p {
 		color: white;;
 	}
+
+	.barloader {
+		width: 100%;
+		height: 50vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 </style>
