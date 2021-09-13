@@ -19,7 +19,7 @@
   <p>{job["text"]}</p>
   <Tags {tags} />
   <a target="_blank" href={url}>Ver Publicación</a>
-  <!--<TimeDiff {timeStamp} />-->
+  <TimeDiff {timeStamp} />
 </article>
 
 <style>
@@ -30,6 +30,7 @@
     box-sizing: border-box;
     margin-bottom: 2rem;
     color: white;
+    position: relative;
   }
 
   a {

@@ -1,8 +1,6 @@
 <script>
   import Tag from "../UI/Tag.svelte";
   export let tags = [];
-
-  console.log(tags);
 </script>
 
 <div>
