@@ -2,7 +2,7 @@
     export let tag = '';
 </script>
 
-<p>{tag}</p>
+<p>#{tag}</p>
 
 <style>
     p {
@@ -11,5 +11,7 @@
         border-radius: 1rem;
         font-size: 0.8rem;
         text-transform: uppercase;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
 </style>
