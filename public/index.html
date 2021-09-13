@@ -6,8 +6,21 @@
 
         <title>TrabajoAR</title>
         <meta name="description" content="La bolsa de trabajo de Twitter">
-		<meta property="og:image" content="/meta-image.jpg">
-		<meta name="twitter:image" content="/meta-image.jpg">
+        <meta
+        property="og:image" content="/meta-image.jpg">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="TrabajoAR">
+        <meta itemprop="description" content="La bolsa de trabajo de Twitter">
+        <meta
+        itemprop="image" content="https://laburos.ar/meta-image.jpg">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="TrabajoAR">
+        <meta name="twitter:description" content="La bolsa de trabajo de Twitter">
+        <meta name="twitter:image" content="https://laburos.ar/meta-image.jpg">
+        <meta name="twitter:image" content="/meta-image.jpg">
 
         <link rel='icon' type='image/png' href='/favicon.png'>
         <link rel='stylesheet' href='/global.css'>
@@ -51,6 +64,8 @@
                         if (! t) 
                             return d("no element found");
                         
+
+
                         function n() {
                             o || t.hasAttribute("target") || (document.location = t.getAttribute("href")),
                             o = !0
@@ -74,6 +89,8 @@
                                         var r = (t.getAttribute("href").split(":")[1] || "").split("?")[0]
                                 }
                             
+
+
                             var l = e + "_" + r.replace(/[^a-z0-9]+/gi, "_").replace(/(^_+|_+$)/g, "");
                             return sa_event(l, n),
                             d("collected " + l),
