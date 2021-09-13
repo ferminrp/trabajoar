@@ -6,7 +6,7 @@
     let profileUrl = "https://twitter.com/"+username;
 </script>
 
-<a href="">
+<a href="{profileUrl}">
     <img loading="lazy" src="{imageUrl}" alt="">
     <h3>{username}</h3>
 </a>
