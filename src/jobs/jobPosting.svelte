@@ -4,7 +4,7 @@
   import Tags from './Tags.svelte'
   export let job;
   
-  console.log(job);
+  //console.log(job);
   let username = job["author"]["username"];
   let id = job["id"];
   let timeStamp = job["created_date"];

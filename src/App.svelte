@@ -21,7 +21,12 @@
       redirect: "follow",
     };
 
-    return fetch("https://qegerxvnmsvqhoxidyzq.supabase.co/rest/v1/tweets?select=*", requestOptions)
+	const yourDate = new Date();
+	yourDate.setDate(yourDate.getDate() - 1)
+	let dateString = yourDate.toISOString().split('T')[0];
+	console.log(dateString);
+
+    return fetch("https://qegerxvnmsvqhoxidyzq.supabase.co/rest/v1/tweets?select=*&created_date=gte."+dateString+"&order=created_date.desc&limit=1000", requestOptions)
       .then((data) => data.json())
       .then(function (data) {
         // For day in data append all elements to trabajos
