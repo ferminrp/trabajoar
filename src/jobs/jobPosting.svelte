@@ -40,8 +40,8 @@
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
     box-sizing: border-box;
-    margin-top: 1rem;
     cursor: pointer;
     display: inline-block;
+    margin-top: 2rem;
   }
 </style>
