@@ -13,8 +13,10 @@
 					trabajos = [...trabajos, data[day][work]];
 				}
 			}
+			// Sort trabajos by "created_at" key
+			trabajos = trabajos.sort((a, b) => (a.created_at > b.created_at) ? -1 : 1);
 			loading = false;
-			/*console.log(trabajos);*/	
+			console.log(trabajos);	
 		});
 	}
 	apiFetcher();

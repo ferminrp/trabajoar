@@ -11,7 +11,7 @@
 <article>
   <Author authorData={job.author} />
   <p>{job["text"]}</p>
-  <a href={url}>Ver Publicación</a>
+  <a target="_blank" href={url}>Ver Publicación</a>
 </article>
 
 <style>
