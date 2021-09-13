@@ -6,12 +6,13 @@
 
 <style>
     p {
-        background-color: #1566c1;
-        padding: 0.5rem;
-        border-radius: 1rem;
+        background-color: #1566c157;
+        padding: 0.6rem;
+        border-radius: 2rem;
         font-size: 0.8rem;
-        text-transform: uppercase;
+        text-transform: lowercase;
         margin-top: 0px;
         margin-bottom: 0px;
+        font-weight: 500;
     }
 </style>
