@@ -1,6 +1,6 @@
 <script>
   export let timeStamp;
-  $: croppedTimeStamp = timeStamp.substring(0, 9)
+  $: croppedTimeStamp = timeStamp.substring(0, 10)
 </script>
 
 <p>{croppedTimeStamp}</p>
