@@ -43,6 +43,7 @@
 		width: 720px;
 		margin: 0 auto;
 		max-width: 90vw;
+		padding-bottom: 5rem;
 	}
 
 	main > h1, main > p {

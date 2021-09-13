@@ -7,7 +7,7 @@
 </script>
 
 <a href="">
-    <img src="{imageUrl}" alt="">
+    <img loading="lazy" src="{imageUrl}" alt="">
     <h3>{username}</h3>
 </a>
 
