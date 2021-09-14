@@ -12,7 +12,6 @@
 
   try {
     imageUrl = job["attachments"]["url"];
-    console.log(imageUrl);
   } catch (error) {}
 
   let url = "https://www.twitter.com/" + username + "/status/" + id;

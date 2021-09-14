@@ -24,7 +24,6 @@
 	const yourDate = new Date();
 	yourDate.setDate(yourDate.getDate() - 1)
 	let dateString = yourDate.toISOString().split('T')[0];
-	console.log(dateString);
 
     return fetch("https://qegerxvnmsvqhoxidyzq.supabase.co/rest/v1/tweets?select=*&created_date=gte."+dateString+"&order=created_date.desc&limit=1000", requestOptions)
       .then((data) => data.json())
@@ -40,7 +39,7 @@
           a.created_at > b.created_at ? -1 : 1
         );
         loading = false;
-        console.log(trabajos);
+        //console.log(trabajos);
       });
   }
   apiFetcher();
