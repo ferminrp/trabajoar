@@ -43,7 +43,7 @@ def find_attachment_data(all_attachments, attachment_id):
 
 def worker():
     iso_date = get_date()
-    url = "https://api.twitter.com/2/tweets/search/recent?start_time="+iso_date+"&tweet.fields=id,text,created_at,entities&expansions=attachments.media_keys,author_id&media.fields=preview_image_url&user.fields=id,name,username,profile_image_url,url&query=%23trabajoAr%20-is%3Aretweet"
+    url = "https://api.twitter.com/2/tweets/search/recent?start_time="+iso_date+"&tweet.fields=id,text,created_at,entities&expansions=attachments.media_keys,author_id&media.fields=duration_ms,height,media_key,non_public_metrics,organic_metrics,preview_image_url,promoted_metrics,public_metrics,type,url,width&user.fields=id,name,username,profile_image_url,url&query=%23trabajoAr%20-is%3Aretweet"
     twitter_data = api_fetcher(url)
     for tweet in twitter_data['data']:
         tweet_id=tweet['id']
@@ -69,7 +69,9 @@ def worker():
 
         r = requests.request("POST", supabase_url, headers=headers, data=payload)
         print(r.text)
+    print("FINISHED EXECUTION")
 
 
-
-worker()
+while True:
+  worker()
+  time.sleep(1000)
