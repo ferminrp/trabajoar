@@ -1,15 +1,19 @@
 <script>
   import Author from "./Author.svelte";
-  import TimeDiff from './TimeDiff.svelte'
-  import Tags from './Tags.svelte'
+  import TimeDiff from "./TimeDiff.svelte";
+  import Tags from "./Tags.svelte";
   export let job;
-  
-  let username = job["author"][0]["username"];
-  console.log(job)
+
+  console.log(job["author"]["username"])
+  let username = job["author"]["username"];
   let id = job["id"];
   let timeStamp = job["created_date"];
   let tags = job["entities"]["hashtags"];
+  let imageUrl;
 
+  try {
+    let imageUrl = job["entities"]["urls"][0]["display_url"];
+  } catch (error) {}
 
   let url = "https://www.twitter.com/" + username + "/status/" + id;
 </script>
@@ -20,6 +24,9 @@
   <Tags {tags} />
   <a target="_blank" href={url}>Ver Publicación</a>
   <TimeDiff {timeStamp} />
+  {#if imageUrl}
+    <img src={imageUrl} />
+  {/if}
 </article>
 
 <style>
@@ -44,5 +51,9 @@
     cursor: pointer;
     display: inline-block;
     margin-top: 2rem;
+  }
+
+  img {
+    max-width: 100%;
   }
 </style>

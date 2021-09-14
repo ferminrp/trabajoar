@@ -1,8 +1,8 @@
 <script>
     export let authorData;
 
-    let username = authorData[0]["username"];
-    let imageUrl = authorData[0]["profile_image_url"];
+    let username = authorData["username"];
+    let imageUrl = authorData["profile_image_url"];
     let profileUrl = "https://twitter.com/"+username;
 </script>
 
