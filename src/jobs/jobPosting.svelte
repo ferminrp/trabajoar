@@ -21,7 +21,7 @@
   <Author authorData={job.author} />
   <p>{job["text"]}</p>
   {#if imageUrl}
-  <img src={imageUrl} />
+  <img loading="lazy" src={imageUrl} />
   {/if}
   <Tags {tags} />
   <a target="_blank" href={url}>Ver Publicación</a>
