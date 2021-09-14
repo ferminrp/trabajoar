@@ -4,11 +4,19 @@
   import Tags from "./Tags.svelte";
   export let job;
 
+  let urlRegex =
+    /(\b((https?|ftp|file):\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?)/gi;
+
   let username = job["author"]["username"];
   let id = job["id"];
   let timeStamp = job["created_date"];
   let tags = job["entities"]["hashtags"];
-  let imageUrl = '';
+  let imageUrl = "";
+
+  let text = job["text"].replace(urlRegex, function (url) {
+    var newUrl = url.indexOf("http") === -1 ? "http://" + url : url;
+    return '<a href="' + newUrl + '">' + url + "</a>";
+  });
 
   try {
     imageUrl = job["attachments"]["url"];
@@ -19,9 +27,9 @@
 
 <article>
   <Author authorData={job.author} />
-  <p>{job["text"]}</p>
+  <p>{@html text}</p>
   {#if imageUrl}
-  <img loading="lazy" src={imageUrl} />
+    <img loading="lazy" src={imageUrl} />
   {/if}
   <Tags {tags} />
   <a target="_blank" href={url}>Ver Publicación</a>
