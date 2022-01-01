@@ -19,6 +19,6 @@
     "svelte-loading-spinners": "0.1.7"
   },
   "dependencies": {
-    "sirv-cli": "1.0.14"
+    "sirv-cli": "2.0.1"
   }
 }
